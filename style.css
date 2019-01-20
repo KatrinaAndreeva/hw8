@@ -1,0 +1,8 @@
+.btn {
+    background-color: grey;
+    border-radius: 2px;
+    color: black;
+}
+.btn-onmove {
+    background-color: red;
+}
