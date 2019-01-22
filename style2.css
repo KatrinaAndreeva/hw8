@@ -5,3 +5,11 @@
 .dropdown-item {
   cursor: pointer;
 }
+.show {
+display: block;
+  
+}
+
+.dropdown-item.open ul {
+      display: block;
+    }
