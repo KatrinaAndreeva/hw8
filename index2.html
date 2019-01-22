@@ -41,18 +41,20 @@
   </ul>
 
   <script>
-    //document.querySelector('span').addEventListener('click',dropdown);
-    //.nextSibling nextElementSibling
     document.addEventListener('click', function(e) {
       if (e.target.tagName != 'SPAN') return;
-      var dropdown = e.target.nextElementSibling;
+      let dropdown = e.target.nextElementSibling;
       if (dropdown.classList.contains('d-none')) {
+        let dropdownshow = document.querySelectorAll('.dropdown-menu.show');
+        for (let i = 0; i < dropdownshow.length; i++) {
+          dropdownshow[i].className = "dropdown-menu d-none";
+        }
         dropdown.className = "dropdown-menu show";
       }
       else {
         dropdown.className = "dropdown-menu d-none";
       }
-    })
+    });
   </script>
   <style type="text/css">
     .d-none {
