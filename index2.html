@@ -8,24 +8,19 @@
   <title>Document</title>
   <link rel="stylesheet" type="text/css" href="style2.css">
 </head>
+
 <body>
   <ul class="menu">
-    
     <li class="dropdown-item">
       <span>Dropdown menu item</span>
-      
       <div class="dropdown-menu d-none">
-        
         <ul class="dropdown-list">
           <li>Dropdown item 1</li>
           <li>Dropdown item 2</li>
         </ul>
-        
-        <!-- / .dropdown-list -->
       </div>
-      <!-- / .dropdown-menu -->
     </li>
-    
+
     <!-- / .dropdown-item -->
     <li>
       <span>Menu item</span>
@@ -35,15 +30,47 @@
       <span>Dropdown menu item 2</span>
       <div class="dropdown-menu d-none">
         <ul class="dropdown-list">
-          <li>Second Dropdown item 1</li>
-          <li>Second Dropdown item 2</li>
+          <li>Dropdown item 1</li>
+          <li>Dropdown item 2</li>
+          <li>Dropdown item 3</li>
+          <li>Dropdown item 4</li>
+          <li>Dropdown item 5</li>
         </ul>
-        <!-- / .dropdown-list -->
       </div>
-      <!-- / .dropdown-menu -->
     </li>
-    <!-- / .dropdown-item -->
   </ul>
-  <script type="text/javascript" src="index2.js"></script>
+
+  <script>
+    //document.querySelector('span').addEventListener('click',dropdown);
+    //.nextSibling nextElementSibling
+    document.addEventListener('click', function(e) {
+      if (e.target.tagName != 'SPAN') return;
+      var dropdown = e.target.nextElementSibling;
+      if (dropdown.classList.contains('d-none')) {
+        dropdown.className = "dropdown-menu show";
+      }
+      else {
+        dropdown.className = "dropdown-menu d-none";
+      }
+    })
+  </script>
+  <style type="text/css">
+    .d-none {
+      display: none;
+    }
+
+    .dropdown-item {
+      cursor: pointer;
+    }
+
+    .show {
+      display: block;
+    }
+
+    .dropdown-item.open ul {
+      display: block;
+    }
+  </style>
 </body>
+
 </html>
